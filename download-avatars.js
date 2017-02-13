@@ -8,7 +8,11 @@ console.log('Hello World');
 function getRepoContributors(repoOwner, repoName, cb) {
   var requestURL = 'https://'+ GITHUB_USER + ':' + GITHUB_TOKEN + '@api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors';
   p(requestURL);
-  cb('oh', 'shit');
+  request('https://sytantris.github.io/http-examples/', function(err, response, body) {
+  if (err) throw err;
+    console.log('Response Status Code:', response.statusCode);
+    cb(err, body);
+  });
 }
 
 getRepoContributors("jquery", "jquery", function(err, result) {
