@@ -19,7 +19,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
     }
     request.get(options, cb);  // Note 1
   }else{
-    console.log("Fuck You, No Params");
+    console.log("Sorry, No Params, No Deal!!");
   }
 }
 
